@@ -43,9 +43,13 @@
     <td><a href="https://vimeo.com/676632280">Дополнительные темы. Configuration. xUnit</a></td>
   </tr>
   <tr>
-    <td>Лабораторная работа № 2<br/><a href="https://github.com/itsec-labs/dotnet-2">https://github.com/itsec-labs/dotnet-2</a></td>    
+    <td rowspan="2">Лабораторная работа № 2<br/><a href="https://github.com/itsec-labs/dotnet-2">https://github.com/itsec-labs/dotnet-2</a></td>    
     <td>Чупшев Н. В.</td>
     <td><a href="https://disk.yandex.ru/i/qsm2Y-uefJ7HMg">Общие сведения</a></td>    
+  </tr>
+  <tr>
+    <td>Чупшев Н. В.</td>
+    <td><a href="https://disk.yandex.ru/i/qsm2Y-uefJ7HMg">2.1. REST. OpenAPI. Терминология</a></td>     
   </tr>
 </table>
 
