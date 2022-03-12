@@ -55,6 +55,10 @@
     <td>Чупшев Н. В.</td>
     <td><a href="https://disk.yandex.ru/i/qmwtp3_fjIz7sw">2.3. REST. OpenAPI. Реализация</a></td>    
   </tr>  
+  <tr>
+    <td>Чупшев Н. В.</td>
+    <td><a href="https://disk.yandex.ru/i/q898vWoirEwx0Q">2.4. gRPC</a></td>    
+  </tr>    
 </table>
 
 ## Лекции
