@@ -101,7 +101,7 @@
     <td><a href="https://vimeo.com/689788901">5.1. Исключения. Сборщик мусора</a></td>
   </tr>
   <tr>
-    <td><a href="https://vimeo.com/689789072">5.2. SafeHandle. Dispose</a></td>
+    <td><a href="https://vimeo.com/689810017">5.2. SafeHandle. Dispose</a></td>
   </tr>
   <tr>
     <td rowspan="2">22.03</td>
