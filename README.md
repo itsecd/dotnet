@@ -98,10 +98,10 @@
   </tr>
   <tr>
     <td rowspan="2">18.03</td>
-    <td>5.1. Исключения. Сборщик мусора</td>
+    <td><a href="https://vimeo.com/689788901">5.1. Исключения. Сборщик мусора</a></td>
   </tr>
   <tr>
-    <td>5.2. Финализаторы и паттерны Dispose</td>
+    <td><a href="https://vimeo.com/689789072">5.2. SafeHandle. Dispose</a></td>
   </tr>
   <tr>
     <td rowspan="2">22.03</td>
