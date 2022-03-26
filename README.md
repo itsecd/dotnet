@@ -43,7 +43,7 @@
     <td><a href="https://vimeo.com/676632280">Дополнительные темы. Configuration. xUnit</a></td>
   </tr>
   <tr>
-    <td rowspan="4">Лабораторная работа № 2<br/><a href="https://github.com/itsec-labs/dotnet-2">https://github.com/itsec-labs/dotnet-2</a></td>    
+    <td rowspan="5">Лабораторная работа № 2<br/><a href="https://github.com/itsec-labs/dotnet-2">https://github.com/itsec-labs/dotnet-2</a></td>    
     <td>Чупшев Н. В.</td>
     <td><a href="https://disk.yandex.ru/i/YfF_ZxoWfIGeGA">2.1. Общие сведения</a></td>    
   </tr>
@@ -59,6 +59,10 @@
     <td>Чупшев Н. В.</td>
     <td><a href="https://disk.yandex.ru/i/q898vWoirEwx0Q">2.4. gRPC</a></td>    
   </tr>    
+  <tr>
+    <td>Чупшев Н. В.</td>
+    <td><a href="https://disk.yandex.ru/i/IDEdPrHqGwzmmQ">2.5. SignalR</a></td>    
+  </tr> 
 </table>
 
 ## Лекции
