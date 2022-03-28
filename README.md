@@ -19,48 +19,40 @@
   </tr>
   <tr>
     <td rowspan="6">Лабораторная работа № 1<br/><a href="https://github.com/itsec-labs/dotnet-1">https://github.com/itsec-labs/dotnet-1</a></td>
-    <td>Чупшев Н. В.</td>
+    <td rowspan="4">Чупшев Н. В.</td>
     <td><a href="https://disk.yandex.ru/i/j9wcfV3SFObLIg">1.1. Общие сведения. Создание иерархии классов</a></td>
   </tr>
   <tr>
-    <td>Чупшев Н. В.</td>
     <td><a href="https://disk.yandex.ru/i/59x2WuvxV4VU9A">1.2. Работа с CLI</a></td>
   </tr>
   <tr>
-    <td>Чупшев Н. В.</td>
     <td><a href="https://disk.yandex.ru/i/1-mRwBMybvMVzQ">1.3. Работа с файлами. XML. Репозиторий</a></td>
   </tr>
   <tr>
-    <td>Чупшев Н. В.</td>
     <td><a href="https://disk.yandex.ru/i/qsm2Y-uefJ7HMg">1.4. Команды. DI</a></td>
   </tr>
   <tr>
-    <td>Юзькив Р. Р.</td>
+    <td rowspan="2">Юзькив Р. Р.</td>
     <td><a href="https://vimeo.com/676632243">Дополнительные темы. Утилита dotnet</a></td>
   </tr>
   <tr>
-    <td>Юзькив Р. Р.</td>
     <td><a href="https://vimeo.com/676632280">Дополнительные темы. Configuration. xUnit</a></td>
   </tr>
   <tr>
     <td rowspan="5">Лабораторная работа № 2<br/><a href="https://github.com/itsec-labs/dotnet-2">https://github.com/itsec-labs/dotnet-2</a></td>    
-    <td>Чупшев Н. В.</td>
+    <td rowspan="5">Чупшев Н. В.</td>
     <td><a href="https://disk.yandex.ru/i/YfF_ZxoWfIGeGA">2.1. Общие сведения</a></td>    
   </tr>
   <tr>
-    <td>Чупшев Н. В.</td>
     <td><a href="https://disk.yandex.ru/i/Dv1eQo93jLYhbw">2.2. REST. OpenAPI. Терминология</a></td>         
   </tr>
   <tr>
-    <td>Чупшев Н. В.</td>
     <td><a href="https://disk.yandex.ru/i/qmwtp3_fjIz7sw">2.3. REST. OpenAPI. Реализация</a></td>    
   </tr>  
   <tr>
-    <td>Чупшев Н. В.</td>
     <td><a href="https://disk.yandex.ru/i/q898vWoirEwx0Q">2.4. gRPC</a></td>    
   </tr>    
   <tr>
-    <td>Чупшев Н. В.</td>
     <td><a href="https://disk.yandex.ru/i/IDEdPrHqGwzmmQ">2.5. SignalR</a></td>    
   </tr> 
 </table>
