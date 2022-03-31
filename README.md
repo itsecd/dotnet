@@ -101,10 +101,10 @@
   </tr>
   <tr>
     <td rowspan="2">22.03</td>
-    <td>6.1. Многопоточность. Task Parallel Library</td>
+    <td><a href="https://vimeo.com/694484086">6.1. Многопоточность</a></td>
   </tr>
   <tr>
-    <td>6.2. Асинхронность</td>
+    <td><a href="https://vimeo.com/694484294">6.2. TPL. Асинхронность</a></td>
   </tr>
   <tr>
     <td>01.04</td>
