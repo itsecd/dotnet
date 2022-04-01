@@ -107,43 +107,73 @@
     <td><a href="https://vimeo.com/694484294">6.2. TPL. Асинхронность</a></td>
   </tr>
   <tr>
-    <td>01.04</td>
-    <td>7. UI: XAML</td>
+    <td rowspan="2">01.04</td>
+    <td>7.1. UI: XAML</td>
   </tr>
   <tr>
-    <td>05.04</td>
-    <td>8. UI: Bindings, Converters & Commands</td>
+    <td>7.2. UI: Controls & Panels</td>
   </tr>
   <tr>
-    <td>15.04</td>
-    <td>9. UI: MVVM & ReactiveUI</td>
+    <td rowspan="2">05.04</td>
+    <td>8.1. TBD</td>
   </tr>
   <tr>
-    <td>19.04</td>
-    <td>10. Reflection, unsafe context & native interoperability</td>
+    <td>8.2. TBD</td>
   </tr>
   <tr>
-    <td>29.04</td>
-    <td>11. SOLID</td>
+    <td rowspan="2">15.04</td>
+    <td>9.1 TBD</td>
   </tr>
   <tr>
-    <td>13.05</td>
-    <td>12. Порождающие паттерны GoF</td>
+    <td>9.2 TBD</td>
   </tr>
   <tr>
-    <td>17.05</td>
-    <td>13. Структурные паттерны GoF</td>
+    <td rowspan="2">19.04</td>
+    <td>10.1 TBD</td>
   </tr>
   <tr>
-    <td>27.05</td>
-    <td>14. Поведенческие паттерны GoF</td>
+    <td>10.2 TBD</td>
   </tr>
   <tr>
-    <td>31.05</td>
-    <td>15. Резерв</td>
+    <td rowspan="2">29.04</td>
+    <td>11.1 TBD</td>
   </tr>
   <tr>
-    <td>10.06</td>
-    <td>16. Резерв</td>
+    <td>11.2 TBD</td>
+  </tr>
+  <tr>
+    <td rowspan="2">13.05</td>
+    <td>12.1 TBD</td>
+  </tr>
+  <tr>
+    <td>12.2 TBD</td>
+  </tr>
+  <tr>
+    <td rowspan="2">17.04</td>
+    <td>13.1 TBD</td>
+  </tr>
+  <tr>
+    <td>13.2 TBD</td>
+  </tr>
+  <tr>
+    <td rowspan="2">27.05</td>
+    <td>14.1 TBD</td>
+  </tr>
+  <tr>
+    <td>14.2 TBD</td>
+  </tr>
+  <tr>
+    <td rowspan="2">31.05</td>
+    <td>15.1 TBD</td>
+  </tr>
+  <tr>
+    <td>15.2 TBD</td>
+  </tr>
+  <tr>
+    <td rowspan="2">10.06</td>
+    <td>16.1 TBD</td>
+  </tr>
+  <tr>
+    <td>16.2 TBD</td>
   </tr>
 </table>
