@@ -115,24 +115,24 @@
   </tr>
   <tr>
     <td rowspan="2">05.04</td>
-    <td>8.1. TBD</td>
+    <td>8.1. UI: Bindings</td>
   </tr>
   <tr>
-    <td>8.2. TBD</td>
+    <td>8.2. UI: Resources</td>
   </tr>
   <tr>
     <td rowspan="2">15.04</td>
-    <td>9.1 TBD</td>
+    <td>9.1 UI: Templates, Styles</td>
   </tr>
   <tr>
-    <td>9.2 TBD</td>
+    <td>9.2 UI: Advanced Rendering</td>
   </tr>
   <tr>
     <td rowspan="2">19.04</td>
-    <td>10.1 TBD</td>
+    <td>10.1 UI: MVVM: Observable</td>
   </tr>
   <tr>
-    <td>10.2 TBD</td>
+    <td>10.2 UI: MVVM: ReactiveUI</td>
   </tr>
   <tr>
     <td rowspan="2">29.04</td>
