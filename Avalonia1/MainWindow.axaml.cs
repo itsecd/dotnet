@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 
-namespace SimpleAvalonia
+namespace Avalonia1
 {
     public partial class MainWindow : Window
     {

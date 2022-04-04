@@ -1,6 +1,6 @@
 using Avalonia;
 
-namespace SimpleAvalonia
+namespace Avalonia1
 {
     internal static class Program
     {

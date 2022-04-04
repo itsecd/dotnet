@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 
-namespace SimpleAvalonia
+namespace Avalonia1
 {
     public class App : Application
     {

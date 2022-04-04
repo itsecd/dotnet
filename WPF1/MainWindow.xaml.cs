@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace SimpleWPF
+namespace WPF1
 {
     public partial class MainWindow : Window
     {

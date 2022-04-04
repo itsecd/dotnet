@@ -2,9 +2,9 @@
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleAvalonia", "SimpleAvalonia\SimpleAvalonia.csproj", "{C935D194-92BB-4DDB-9BA9-61522D743645}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia1", "Avalonia1/Avalonia1.csproj", "{C935D194-92BB-4DDB-9BA9-61522D743645}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleWPF", "SimpleWPF\SimpleWPF.csproj", "{CE360790-C43B-4E26-B0F4-F48C188C5863}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF1", "WPF1/WPF1.csproj", "{CE360790-C43B-4E26-B0F4-F48C188C5863}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F4B6A5B3-F03C-4CE7-818A-125087546979}"
 	ProjectSection(SolutionItems) = preProject
