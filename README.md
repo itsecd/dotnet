@@ -115,7 +115,7 @@
   </tr>
   <tr>
     <td rowspan="2">05.04</td>
-    <td>8.1. UI: Bindings</td>
+    <td><a href="https://vimeo.com/696087179">8.1. UI: Bindings</a></td>
   </tr>
   <tr>
     <td>8.2. UI: Resources</td>
