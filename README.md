@@ -108,10 +108,10 @@
   </tr>
   <tr>
     <td rowspan="2">01.04</td>
-    <td>7.1. UI: XAML</td>
+    <td><a href="https://vimeo.com/696008108">7.1. UI: XAML</a></td>
   </tr>
   <tr>
-    <td>7.2. UI: Controls & Panels</td>
+    <td><a href="https://vimeo.com/696008211">7.2. UI: Controls & Panels</a></td>
   </tr>
   <tr>
     <td rowspan="2">05.04</td>
