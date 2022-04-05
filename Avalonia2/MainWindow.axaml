@@ -37,11 +37,11 @@
                     Orientation="Horizontal">
             <Button Click="ClearSelection"
                     Content="Сбросить выбранный элемент"
-                    IsEnabled="{Binding SelectedItem, ElementName=IntegerList}"
+                    IsEnabled="{Binding #IntegerList.SelectedItem}"
                     Padding="16,4,16,4" />
             <Button Click="RemoveEven"
                     Content="Удалить чётное число"
-                    IsEnabled="{Binding IsChecked, ElementName=IsEvenCheckBox}"
+                    IsEnabled="{Binding #IsEvenCheckBox.IsChecked}"
                     Margin="10,0,0,0"
                     Padding="16,4,16,4" />
         </StackPanel>
@@ -49,7 +49,7 @@
         <CheckBox DockPanel.Dock="Bottom"
                   Name="IsEvenCheckBox"
                   Content="Выбрано чётное число"
-                  IsChecked="{Binding SelectedItem, ElementName=IntegerList,
+                  IsChecked="{Binding #IntegerList.SelectedItem,
                              Converter={StaticResource IntToEvenConverter},
                              Mode=OneWay}"
                   IsEnabled="False"

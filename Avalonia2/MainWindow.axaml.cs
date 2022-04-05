@@ -8,7 +8,10 @@ namespace Avalonia2
 {
     public partial class MainWindow : Window
     {
-        public MainWindow() => InitializeComponent();
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
 
         private void ShowCredits(object sender, RoutedEventArgs e)
         {
