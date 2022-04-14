@@ -10,7 +10,7 @@ namespace WPF3.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is not Person person)
-                return null;
+                return Brushes.Transparent;
 
             return person.IsFemale ? Brushes.DeepPink : Brushes.Blue;
         }

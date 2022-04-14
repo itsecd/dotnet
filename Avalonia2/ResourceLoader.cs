@@ -21,7 +21,7 @@ namespace Avalonia2
                 var assemblyName = Assembly.GetCallingAssembly().GetName().Name;
                 return assets.Open(new Uri($"avares://{assemblyName}/{path}"));
             }
-            catch (Exception e)
+            catch
             {
                 // Log missing resource
                 return null;

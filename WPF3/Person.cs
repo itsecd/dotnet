@@ -4,8 +4,8 @@ namespace WPF3
     {
         public bool IsFemale { get; set; }
 
-        public string FirstName { get; set; }
+        public string FirstName { get; set; } = string.Empty;
 
-        public string LastName { get; set; }
+        public string LastName { get; set; } = string.Empty;
     }
 }

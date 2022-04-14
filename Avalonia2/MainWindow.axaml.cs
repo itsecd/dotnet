@@ -21,8 +21,10 @@ namespace Avalonia2
             try
             {
                 using var stream = ResourceLoader.Open("Assets/Credits.txt");
-                using var reader = new StreamReader(stream);
+                if (stream is null)
+                    return;
 
+                using var reader = new StreamReader(stream);
                 Credits.Text = reader.ReadToEnd();
             }
             catch
