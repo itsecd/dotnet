@@ -62,7 +62,7 @@
                      Fill="DeepSkyBlue"
                      Stroke="DarkBlue" />
             <Line X1="10" Y1="60" X2="190" Y2="100"
-                  Stroke="DeepPink" StrokeThickness="1" />
+                  Stroke="DeepPink" StrokeThickness="2" />
             <Path Stroke="Black" StrokeThickness="1" Fill="AntiqueWhite"
                   Data="M 10,110 190,110 150,210 190,210 10,300 Q 120,150 10,150 Z">
             </Path>

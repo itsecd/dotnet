@@ -86,7 +86,7 @@
                      Fill="DeepSkyBlue"
                      Stroke="DarkBlue" />
             <Line StartPoint="10,60" EndPoint="190,100"
-                  Stroke="DeepPink" StrokeThickness="1" />
+                  Stroke="DeepPink" StrokeThickness="2" />
             <Path Stroke="Black" StrokeThickness="1" Fill="AntiqueWhite"
                   Data="M 10,110 190,110 150,210 190,210 10,300 Q 120,150 10,150 Z" />
         </Canvas>
