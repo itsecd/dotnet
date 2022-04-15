@@ -122,10 +122,10 @@
   </tr>
   <tr>
     <td rowspan="2">15.04</td>
-    <td>9.1 UI: Templates, Styles</td>
+    <td><a href="https://vimeo.com/699751390">9.1. UI: Templates, Styles</a></td>
   </tr>
   <tr>
-    <td>9.2 UI: Advanced Rendering</td>
+    <td><a href="https://vimeo.com/699751491">9.2. UI: Advanced Rendering</a></td>
   </tr>
   <tr>
     <td rowspan="2">19.04</td>
