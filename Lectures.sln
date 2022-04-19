@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F4B6A5B3-F03C-4CE7-818A-125087546979}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia1", "Avalonia1\Avalonia1.csproj", "{C935D194-92BB-4DDB-9BA9-61522D743645}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia2", "Avalonia2\Avalonia2.csproj", "{865461A5-DE41-43A9-8A4A-87EBA331E7E6}"
@@ -15,11 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF2", "WPF2\WPF2.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF3", "WPF3\WPF3.csproj", "{380272A6-F433-4314-8899-23422DD901D7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F4B6A5B3-F03C-4CE7-818A-125087546979}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-		.gitignore = .gitignore
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF4", "WPF4\WPF4.csproj", "{77DE7556-E391-42C9-A335-39B38EAE5673}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{380272A6-F433-4314-8899-23422DD901D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{380272A6-F433-4314-8899-23422DD901D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{380272A6-F433-4314-8899-23422DD901D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77DE7556-E391-42C9-A335-39B38EAE5673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77DE7556-E391-42C9-A335-39B38EAE5673}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77DE7556-E391-42C9-A335-39B38EAE5673}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77DE7556-E391-42C9-A335-39B38EAE5673}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

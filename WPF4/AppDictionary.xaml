@@ -1,0 +1,5 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Style TargetType="Button">
+        <Setter Property="Padding" Value="16,4,16,4"/>
+    </Style>
+</ResourceDictionary>
