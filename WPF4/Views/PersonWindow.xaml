@@ -6,7 +6,7 @@
                     DataContext="{Binding RelativeSource={RelativeSource Self}, Path=ViewModel}"
                     ResizeMode="NoResize"
                     SizeToContent="WidthAndHeight"
-                    Title="Новый человек"
+                    Title="Person"
                     WindowStartupLocation="CenterOwner">
     <Window.Resources>
         <ResourceDictionary>
