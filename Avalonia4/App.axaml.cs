@@ -2,8 +2,6 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 
-using Avalonia4.Views;
-
 using Shared4.Services;
 using Shared4.ViewModels;
 

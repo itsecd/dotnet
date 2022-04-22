@@ -1,4 +1,4 @@
-<Window x:Class="Avalonia4.Views.PersonWindow"
+<Window x:Class="Avalonia4.PersonWindow"
         xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:v="clr-namespace:WPF4.Views"

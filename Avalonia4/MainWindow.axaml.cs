@@ -4,7 +4,7 @@ using ReactiveUI;
 
 using Shared4.ViewModels;
 
-namespace Avalonia4.Views
+namespace Avalonia4
 {
     public partial class MainWindow : ReactiveWindow<MainViewModel>
     {
