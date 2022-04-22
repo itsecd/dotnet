@@ -2,6 +2,7 @@ using Avalonia.ReactiveUI;
 
 using ReactiveUI;
 
+using Shared4.Models;
 using Shared4.ViewModels;
 
 namespace Avalonia4
@@ -22,8 +23,8 @@ namespace Avalonia4
                     var personViewModel = new PersonViewModel();
                     var personView = new PersonWindow { ViewModel = personViewModel };
 
-                    await personView.ShowDialog(this);
-                    interaction.SetOutput(personViewModel.Result);
+                    var person = await personView.ShowDialog<Person?>(this);
+                    interaction.SetOutput(person);
                 }));
             });
         }

@@ -24,7 +24,7 @@ namespace WPF4
 
                   cd.Add(ViewModel.Close.RegisterHandler(interaction =>
                   {
-                      DialogResult = interaction.Input;
+                      Tag = interaction.Input;
                       interaction.SetOutput(Unit.Default);
                       Close();
                   }));

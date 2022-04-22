@@ -15,13 +15,11 @@ namespace Shared4.ViewModels
 
         public bool IsFemale { get; set; }
 
-        public Person? Result { get; private set; }
-
         public ReactiveCommand<Unit, Unit> Ok { get; }
 
         public ReactiveCommand<Unit, Unit> Cancel { get; }
 
-        public Interaction<bool, Unit> Close { get; } = new(RxApp.MainThreadScheduler);
+        public Interaction<Person?, Unit> Close { get; } = new(RxApp.MainThreadScheduler);
 
         public PersonViewModel()
         {
@@ -31,28 +29,21 @@ namespace Shared4.ViewModels
 
         private IObservable<Unit> OkImpl()
         {
-            // Если нужна валидация, она делается здесь
-            // 1. Завести свойство ShowError типа Interaction<string, Unit> для показа ошибки
-            // 2. В PersonWindow.xaml.cs зарегистрировать для него обработчик
-            // 3. Здесь написать что-то вроде:
-            //     if (что-то пошло не так)
-            //         return ShowError.Handle(сообщение для показа пользователю);
+            // Validation may be here
 
-            Result = new Person
+            var person = new Person
             {
                 FirstName = FirstName,
                 LastName = LastName,
                 IsFemale = IsFemale
             };
 
-            return Close.Handle(true);
+            return Close.Handle(person);
         }
 
         private IObservable<Unit> CancelImpl()
         {
-            Result = null;
-
-            return Close.Handle(false);
+            return Close.Handle(null);
         }
     }
 }

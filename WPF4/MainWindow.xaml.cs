@@ -2,6 +2,7 @@ using System.Reactive.Linq;
 
 using ReactiveUI;
 
+using Shared4.Models;
 using Shared4.ViewModels;
 
 namespace WPF4
@@ -31,11 +32,11 @@ namespace WPF4
                         ViewModel = personViewModel
                     };
 
-                    // No async ShowDialog...
+                    // No async version of ShowDialog...
                     return Observable.Start(() =>
                     {
                         _ = personView.ShowDialog();
-                        interaction.SetOutput(personViewModel.Result);
+                        interaction.SetOutput(personView.Tag as Person);
                     }, RxApp.MainThreadScheduler);
                 }));
             });

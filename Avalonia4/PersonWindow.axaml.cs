@@ -22,7 +22,7 @@ namespace Avalonia4
                   cd.Add(ViewModel.Close.RegisterHandler(interaction =>
                   {
                       interaction.SetOutput(Unit.Default);
-                      Close();
+                      Close(interaction.Input);
                   }));
               });
         }
