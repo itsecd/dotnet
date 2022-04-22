@@ -4,9 +4,8 @@ using System.Windows;
 
 using ReactiveUI;
 
-using WPF4.Services;
-using WPF4.ViewModels;
-using WPF4.Views;
+using Shared4.Services;
+using Shared4.ViewModels;
 
 namespace WPF4
 {

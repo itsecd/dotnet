@@ -2,11 +2,10 @@ using System.Reactive.Linq;
 
 using ReactiveUI;
 
-using WPF4.ViewModels;
+using Shared4.ViewModels;
 
-namespace WPF4.Views
+namespace WPF4
 {
-    // Привет багам по nullable-совместимости WPF со сторонними библиотеками
     // https://github.com/reactiveui/ReactiveUI/issues/2330#issuecomment-577968613
     public class MainWindowBase : ReactiveWindow<MainViewModel>
     {
@@ -32,7 +31,7 @@ namespace WPF4.Views
                         ViewModel = personViewModel
                     };
 
-                    // Привет отсутствию асинхронного ShowDialog в WPF
+                    // No async ShowDialog...
                     return Observable.Start(() =>
                     {
                         _ = personView.ShowDialog();

@@ -1,8 +1,8 @@
-<v:MainWindowBase x:Class="WPF4.Views.MainWindow"
+<v:MainWindowBase x:Class="WPF4.MainWindow"
                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                  xmlns:m="clr-namespace:WPF4.Models"
-                  xmlns:v="clr-namespace:WPF4.Views"
+                  xmlns:m="clr-namespace:Shared4.Models;assembly=Shared4"
+                  xmlns:v="clr-namespace:WPF4"
                   xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                   DataContext="{Binding RelativeSource={RelativeSource Self}, Path=ViewModel}"
                   ResizeMode="NoResize"
@@ -48,7 +48,7 @@
             </StackPanel>
         </GroupBox>
 
-        <GroupBox Header="DynamicData &amp; Interactions" Margin="10,0,0,0">
+        <GroupBox Header="DynamicData &amp; Interactions" Margin="20,0,0,0">
             <StackPanel Orientation="Horizontal">
                 <ListBox ItemsSource="{Binding Persons}"
                          SelectedItem="{Binding SelectedPerson}"

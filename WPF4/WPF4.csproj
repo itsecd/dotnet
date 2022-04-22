@@ -9,9 +9,11 @@
 
     <ItemGroup>
         <PackageReference Include="DotNetProjects.Extended.Wpf.Toolkit" Version="5.0.103" />
-        <PackageReference Include="ReactiveUI" Version="16.4.15" />
-        <PackageReference Include="ReactiveUI.Fody" Version="16.4.15" />
-        <PackageReference Include="ReactiveUI.WPF" Version="16.4.15" />
+        <PackageReference Include="ReactiveUI.WPF" Version="13.2.10" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../Shared4/Shared4.csproj" />
     </ItemGroup>
 
 </Project>
