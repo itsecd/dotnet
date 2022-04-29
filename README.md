@@ -128,11 +128,8 @@
     <td><a href="https://vimeo.com/699751491">9.2. UI: Advanced Rendering</a></td>
   </tr>
   <tr>
-    <td rowspan="2">29.04</td>
-    <td>10.1 UI: MVVM: Observable</td>
-  </tr>
-  <tr>
-    <td>10.2 UI: MVVM: ReactiveUI</td>
+    <td>29.04</td>
+    <td><a href="https://vimeo.com/704519878">10. UI: MVVM & ReactiveUI</a></td>
   </tr>
   <tr>
     <td>?</td>
