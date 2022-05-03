@@ -132,20 +132,11 @@
     <td><a href="https://vimeo.com/704519878">10. UI: MVVM & ReactiveUI</a></td>
   </tr>
   <tr>
-    <td>?</td>
-    <td>11. Пример. Морской бой</td>
+    <td>03.05</td>
+    <td rowspan="2"><a href="https://drive.google.com/drive/folders/1FGPTjTy1PsG4krRfzDFgYT03eD9GdG2Z">Папка с видеозаписями</a></td>
   </tr>
-  <tr>
-    <td>?</span></td>
-    <td>12. Пример. Морской бой</td>
-  </tr>
-  <tr>
+<tr>
     <td>?</td>
-    <td>13. Пример. Морской бой</td>
-  </tr>
-  <tr>
-    <td>?</td>
-    <td>14. Пример. Морской бой</td>
   </tr>
   <tr>
     <td>?</td>
