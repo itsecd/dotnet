@@ -144,5 +144,5 @@
 | 13.05 | 13:30 | 12. Shared Project, Client: PlaygroundView |
 | 13.05 | 19:00 | 13. Client: CellView                       |
 | 17.05 | 13:30 | 14. Client: PlaygroundView                 |
-| 17.05 | 19:00 | 15.                                        |
+| 17.05 | 19:00 | 15. Login (Client & Server)                |
 | 20.05 | 19:00 | 16.                                        |
