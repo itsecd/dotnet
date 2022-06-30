@@ -19,7 +19,7 @@
     <th colspan="2">Материалы</th>
   </tr>
   <tr>
-    <td rowspan="6">Лабораторная работа № 1<br/><a href="https://github.com/itsecd/dotnet-1">https://github.com/itsec-labs/dotnet-1</a></td>
+    <td rowspan="6">Лабораторная работа № 1<br/><a href="https://github.com/itsecd/dotnet-1">https://github.com/itsecd/dotnet-1</a></td>
     <td rowspan="4">Чупшев Н. В.</td>
     <td><a href="https://disk.yandex.ru/i/j9wcfV3SFObLIg">1.1. Общие сведения. Создание иерархии классов</a></td>
   </tr>
@@ -40,7 +40,7 @@
     <td><a href="https://vimeo.com/676632280">Дополнительные темы. Configuration. xUnit</a></td>
   </tr>
   <tr>
-    <td rowspan="5">Лабораторная работа № 2<br/><a href="https://github.com/itsecd/dotnet-2">https://github.com/itsec-labs/dotnet-2</a></td>    
+    <td rowspan="5">Лабораторная работа № 2<br/><a href="https://github.com/itsecd/dotnet-2">https://github.com/itsecd/dotnet-2</a></td>    
     <td rowspan="5">Чупшев Н. В.</td>
     <td><a href="https://disk.yandex.ru/i/YfF_ZxoWfIGeGA">2.1. Общие сведения</a></td>    
   </tr>
