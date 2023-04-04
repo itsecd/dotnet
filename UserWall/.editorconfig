@@ -1,0 +1,13 @@
+[*.{axaml,cs,csproj,manifest,xaml}]
+charset = utf-8
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+tab_width = 4
+trim_trailing_whitespace = true
+
+[*.cs]
+csharp_style_namespace_declarations = file_scoped
+dotnet_diagnostic.IDE0161.severity = warning
+dotnet_separate_import_directive_groups = true
+dotnet_sort_system_directives_first = true
