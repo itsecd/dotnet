@@ -5,6 +5,7 @@
         <NoWarn>$(NoWarn);1591</NoWarn>
         <Nullable>enable</Nullable>
         <TargetFramework>net6.0</TargetFramework>
+        <UserSecretsId>c27d1671-ecbc-4355-9498-51ff76e02245</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>

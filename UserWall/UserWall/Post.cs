@@ -12,5 +12,5 @@ public sealed class Post
 
     public string Message { get; set; } = string.Empty;
 
-    // public User User { get; set; }
+    public User User { get; set; } = null!;
 }
