@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -5,6 +6,8 @@ using AutoMapper;
 
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 
 using UserWall.Dto;
 
@@ -14,12 +17,12 @@ namespace UserWall.Server.Controllers;
 [Route("api/[controller]")]
 public class UserController : ControllerBase
 {
-    private readonly Context _context;
+    private readonly IDbContextFactory<UserWallContext> _contextFactory;
     private readonly IMapper _mapper;
 
-    public UserController(Context context, IMapper mapper)
+    public UserController(IDbContextFactory<UserWallContext> contextFactory, IMapper mapper)
     {
-        _context = context;
+        _contextFactory = contextFactory;
         _mapper = mapper;
     }
 
@@ -30,7 +33,8 @@ public class UserController : ControllerBase
     [HttpGet]
     public IEnumerable<UserDto> Get()
     {
-        return _mapper.Map<IEnumerable<UserDto>>(_context.Users);
+        using var ctx = _contextFactory.CreateDbContext();
+        return _mapper.Map<IEnumerable<UserDto>>(ctx.Users);
     }
 
     /// <summary>
@@ -43,80 +47,10 @@ public class UserController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public ActionResult<UserDto> Get(int id)
     {
-        var user = _context.Users
-            .Where(user => user.Id == id)
-            .SingleOrDefault();
-
+        using var ctx = _contextFactory.CreateDbContext();
+        var user = ctx.Find<User>(id);
         if (user is null)
             return NotFound();
-
-        var userDto = _mapper.Map<UserDto>(user);
-
-        return Ok(userDto);
-    }
-
-    /// <summary>
-    /// Create a new user.
-    /// </summary>
-    /// <param name="userPostDto">New user.</param>
-    /// <returns>New user id.</returns>
-    [HttpPost]
-    public int Post(UserPostDto userPostDto)
-    {
-        var user = _mapper.Map<User>(userPostDto);
-
-        user.Id = _context.Users
-            .Select(user => user.Id)
-            .DefaultIfEmpty()
-            .Max() + 1;
-
-        _context.Users.Add(user);
-
-        return user.Id;
-    }
-
-    /// <summary>
-    /// Updates the existing user data.
-    /// </summary>
-    /// <param name="userDto">New user data.</param>
-    /// <returns>OK or NotFound.</returns>
-    [HttpPut]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public IActionResult Put(UserDto userDto)
-    {
-        var user = _context.Users
-            .Where(user => user.Id == userDto.Id)
-            .SingleOrDefault();
-
-        if (user is null)
-            return NotFound();
-
-        _mapper.Map(userDto, user);
-
-        return Ok();
-    }
-
-    /// <summary>
-    /// Deletes a user by id.
-    /// </summary>
-    /// <param name="id">The user id.</param>
-    /// <returns>OK or NotFound.</returns>
-    [HttpDelete("{id:int}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public IActionResult Delete(int id)
-    {
-        var user = _context.Users
-            .Where(user => user.Id == id)
-            .SingleOrDefault();
-
-        if (user is null)
-            return NotFound();
-
-        _context.Posts.RemoveAll(post => post.UserId == id);
-        _context.Users.Remove(user);
-
-        return Ok();
+        return _mapper.Map<UserDto>(user);
     }
 }

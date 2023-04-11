@@ -7,12 +7,19 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 using UserWall;
+using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddControllers();
+builder.Services.AddDbContextFactory<UserWallContext>(optionsBuilder =>
+{
+    var connectionString = builder.Configuration.GetConnectionString(nameof(UserWall));
+    optionsBuilder.UseMySQL(connectionString);
+});
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
-builder.Services.AddSingleton<Context>();
 builder.Services.AddSwaggerGen(options =>
 {
     var docName = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";

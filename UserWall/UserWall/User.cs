@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace UserWall;
 
 public sealed class User
@@ -8,5 +10,5 @@ public sealed class User
 
     public string LastName { get; set; } = string.Empty;
 
-    // public List<Post> Posts { get; } = new();
+    public List<Post> Posts { get; set; } = null!;
 }
