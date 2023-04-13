@@ -1,13 +1,11 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 
 using AutoMapper;
 
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
 
 using UserWall.Dto;
 
@@ -31,10 +29,13 @@ public class UserController : ControllerBase
     /// </summary>
     /// <returns>The list of all users.</returns>
     [HttpGet]
-    public IEnumerable<UserDto> Get()
+    public async Task<IEnumerable<UserDto>> Get()
     {
-        using var ctx = _contextFactory.CreateDbContext();
-        return _mapper.Map<IEnumerable<UserDto>>(ctx.Users);
+        using var ctx = await _contextFactory.CreateDbContextAsync();
+
+        var users = await ctx.Users.ToArrayAsync();
+
+        return _mapper.Map<IEnumerable<UserDto>>(users);
     }
 
     /// <summary>
@@ -45,12 +46,14 @@ public class UserController : ControllerBase
     [HttpGet("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public ActionResult<UserDto> Get(int id)
+    public async Task<ActionResult<UserDto>> Get(int id)
     {
-        using var ctx = _contextFactory.CreateDbContext();
-        var user = ctx.Find<User>(id);
+        using var ctx = await _contextFactory.CreateDbContextAsync();
+
+        var user = await ctx.FindAsync<User>(id);
         if (user is null)
             return NotFound();
+
         return _mapper.Map<UserDto>(user);
     }
 }
