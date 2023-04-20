@@ -28,7 +28,7 @@ public class UserController : ControllerBase
     /// Returns a list of all users.
     /// </summary>
     /// <returns>The list of all users.</returns>
-    [HttpGet]
+    [HttpGet(Name = "GetUsers")]
     public async Task<IEnumerable<UserDto>> Get()
     {
         using var ctx = await _contextFactory.CreateDbContextAsync();
@@ -43,7 +43,7 @@ public class UserController : ControllerBase
     /// </summary>
     /// <param name="id">The user id.</param>
     /// <returns>OK (the user found by the specified id) or NotFound.</returns>
-    [HttpGet("{id:int}")]
+    [HttpGet("{id:int}", Name = "GetUser")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<ActionResult<UserDto>> Get(int id)
