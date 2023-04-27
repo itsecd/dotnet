@@ -1,0 +1,24 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="UserWall.Desktop.UserListWindow"
+        Title="Список пользователей"
+        Width="600" Height="400">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top"
+                    Orientation="Horizontal"
+                    Spacing="10">
+            <Button Content="Добавить"
+                    Command="{Binding AddCommand}"/>
+            <Button Content="Редактировать"
+                    Command="{Binding EditCommand}"/>
+            <Button Content="Удалить"
+                    Command="{Binding RemoveCommand}"/>
+        </StackPanel>
+        <DataGrid Margin="0,10,0,0"
+                  Items="{Binding Items}"
+                  SelectedItem="{Binding SelectedItem}"
+                  AutoGenerateColumns="True"
+                  IsReadOnly="True">
+        </DataGrid>
+    </DockPanel>
+</Window>

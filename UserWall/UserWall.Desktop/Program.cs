@@ -1,4 +1,5 @@
 using Avalonia;
+using Avalonia.ReactiveUI;
 
 namespace UserWall.Desktop;
 
@@ -14,6 +15,7 @@ internal class Program
         return AppBuilder
             .Configure<App>()
             .UsePlatformDetect()
+            .UseReactiveUI()
             .LogToTrace();
     }
 }
