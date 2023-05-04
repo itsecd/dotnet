@@ -20,10 +20,14 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="ReactiveUI.Fody" Version="18.4.34" />
         <PackageReference Include="XamlNameReferenceGenerator" Version="1.6.1" />
     </ItemGroup>
 
     <ItemGroup>
+      <Compile Update="Windows\UserWindow.axaml.cs">
+        <DependentUpon>UserWindow.axaml</DependentUpon>
+      </Compile>
       <Compile Update="Windows\UserListWindow.axaml.cs">
         <DependentUpon>UserListWindow.axaml</DependentUpon>
       </Compile>

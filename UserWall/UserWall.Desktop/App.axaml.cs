@@ -3,6 +3,7 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 
 using UserWall.Desktop.ViewModels;
+using UserWall.Desktop.Views;
 
 namespace UserWall.Desktop;
 public partial class App : Application

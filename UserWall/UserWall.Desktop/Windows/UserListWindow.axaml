@@ -1,6 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        x:Class="UserWall.Desktop.UserListWindow"
+        x:Class="UserWall.Desktop.Views.UserListWindow"
         Title="Список пользователей"
         Width="600" Height="400">
     <DockPanel>

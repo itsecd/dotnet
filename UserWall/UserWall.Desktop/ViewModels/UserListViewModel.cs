@@ -1,6 +1,4 @@
-using System;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Reactive;
@@ -10,6 +8,7 @@ using System.Threading.Tasks;
 using Avalonia.Threading;
 
 using ReactiveUI;
+using ReactiveUI.Fody.Helpers;
 
 namespace UserWall.Desktop.ViewModels;
 
@@ -17,40 +16,47 @@ public sealed class UserListViewModel : ReactiveObject
 {
     public ObservableCollection<UserDto> Items { get; } = new();
 
-    // [Reactive]
-    public UserDto? SelectedItem { get; set; }
+    [Reactive] public UserDto? SelectedItem { get; set; }
 
     public ReactiveCommand<Unit, Unit> AddCommand { get; }
-
     public ReactiveCommand<Unit, Unit> EditCommand { get; }
-
     public ReactiveCommand<Unit, Unit> RemoveCommand { get; }
+
+    public Interaction<UserDto?, UserDto?> ItemInteraction { get; } = new();
 
     public UserListViewModel()
     {
-        this.WhenAnyValue(viewModel => viewModel.SelectedItem)
-            .Subscribe((UserDto? userDto) => Debug.WriteLine(userDto));
+        var hasSelectedItem = this
+            .WhenAnyValue(viewModel => viewModel.SelectedItem)
+            .Select(selectedItem => selectedItem is not null);
 
         AddCommand = ReactiveCommand.CreateFromTask(Add);
-        EditCommand = ReactiveCommand.CreateFromTask(Edit);
-        RemoveCommand = ReactiveCommand.CreateFromTask(Remove);
+        EditCommand = ReactiveCommand.CreateFromTask(Edit, hasSelectedItem);
+        RemoveCommand = ReactiveCommand.CreateFromTask(Remove, hasSelectedItem);
 
         Task.Run(Load);
     }
 
-    private Task Add()
+    private async Task Add()
     {
-        return Task.CompletedTask;
+        await ItemInteraction.Handle(null);
     }
 
-    private Task Edit()
+    private async Task Edit()
     {
-        return Task.CompletedTask;
+        if (SelectedItem is null)
+            return;
+
+        await ItemInteraction.Handle(SelectedItem);
     }
 
-    private Task Remove()
+    private async Task Remove()
     {
-        return Task.CompletedTask;
+        if (SelectedItem is null)
+            return;
+
+        // await client.???(SelectedItem.Id);
+        await Task.Delay(1000);
     }
 
     private async Task Load()
