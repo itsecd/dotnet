@@ -31,7 +31,7 @@ public class UserController : ControllerBase
     [HttpGet(Name = "GetUsers")]
     public async Task<IEnumerable<UserDto>> Get()
     {
-        using var ctx = await _contextFactory.CreateDbContextAsync();
+        await using var ctx = await _contextFactory.CreateDbContextAsync();
 
         var users = await ctx.Users.ToArrayAsync();
 
@@ -42,18 +42,83 @@ public class UserController : ControllerBase
     /// Returns a user by id.
     /// </summary>
     /// <param name="id">The user id.</param>
-    /// <returns>OK (the user found by the specified id) or NotFound.</returns>
+    /// <returns>Ok or NotFound.</returns>
     [HttpGet("{id:int}", Name = "GetUser")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<ActionResult<UserDto>> Get(int id)
     {
-        using var ctx = await _contextFactory.CreateDbContextAsync();
+        await using var ctx = await _contextFactory.CreateDbContextAsync();
 
         var user = await ctx.FindAsync<User>(id);
         if (user is null)
             return NotFound();
 
         return _mapper.Map<UserDto>(user);
+    }
+
+    /// <summary>
+    /// Creates a new user.
+    /// </summary>
+    /// <param name="user">New user data.</param>
+    /// <returns>The ID assigned to the new user.</returns>
+    [HttpPost(Name = "CreateUser")]
+    public async Task<int> Post(UserPostDto user)
+    {
+        var userEntity = _mapper.Map<User>(user);
+
+        await using (var ctx = await _contextFactory.CreateDbContextAsync())
+        {
+            ctx.Add(userEntity);
+            await ctx.SaveChangesAsync();
+        }
+
+        return userEntity.Id;
+    }
+
+    /// <summary>
+    /// Updates an existing user.
+    /// </summary>
+    /// <param name="user">New user data.</param>
+    /// <returns>Ok or NotFound.</returns>
+    [HttpPut(Name = "UpdateUser")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> Put(UserDto user)
+    {
+        await using var ctx = await _contextFactory.CreateDbContextAsync();
+
+        var userEntity = await ctx.FindAsync<User>(user.Id);
+        if (userEntity is null)
+            return NotFound();
+
+        _mapper.Map(user, userEntity);
+
+        await ctx.SaveChangesAsync();
+
+        return Ok();
+    }
+
+    /// <summary>
+    /// Deletes a user by id.
+    /// </summary>
+    /// <param name="id">The user id.</param>
+    /// <returns>Ok or NotFound.</returns>
+    [HttpDelete("{id:int}", Name = "DeleteUser")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> Delete(int id)
+    {
+        await using var ctx = await _contextFactory.CreateDbContextAsync();
+
+        var user = await ctx.FindAsync<User>(id);
+        if (user is null)
+            return NotFound();
+
+        ctx.Remove(user);
+
+        await ctx.SaveChangesAsync();
+
+        return Ok();
     }
 }
