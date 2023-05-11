@@ -1,18 +1,20 @@
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Net.Http;
 using System.Reactive;
+using System.Reactive.Concurrency;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 
-using Avalonia.Threading;
+using DynamicData;
 
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 
+using Splat;
+
 namespace UserWall.Desktop.ViewModels;
 
-public sealed class UserListViewModel : ReactiveObject
+public sealed class UserListViewModel : BaseViewModel
 {
     public ObservableCollection<UserDto> Items { get; } = new();
 
@@ -39,7 +41,22 @@ public sealed class UserListViewModel : ReactiveObject
 
     private async Task Add()
     {
-        await ItemInteraction.Handle(null);
+        var userDto = await ItemInteraction.Handle(null);
+        if (userDto is null)
+            return;
+
+        var client = Locator.Current.GetServiceOrThrow<UserWallClient>();
+
+        // TODO: AutoMapper
+        var id = await client.CreateUserAsync(new UserPostDto
+        {
+            FirstName = userDto.FirstName,
+            LastName = userDto.LastName
+        });
+
+        userDto = await client.GetUserAsync(id);
+
+        Items.Add(userDto);
     }
 
     private async Task Edit()
@@ -47,7 +64,15 @@ public sealed class UserListViewModel : ReactiveObject
         if (SelectedItem is null)
             return;
 
-        await ItemInteraction.Handle(SelectedItem);
+        var userDto = await ItemInteraction.Handle(SelectedItem);
+        if (userDto is null)
+            return;
+
+        var client = Locator.Current.GetServiceOrThrow<UserWallClient>();
+
+        await client.UpdateUserAsync(userDto);
+
+        Items.Replace(SelectedItem, userDto);
     }
 
     private async Task Remove()
@@ -55,17 +80,20 @@ public sealed class UserListViewModel : ReactiveObject
         if (SelectedItem is null)
             return;
 
-        // await client.???(SelectedItem.Id);
-        await Task.Delay(1000);
+        var client = Locator.Current.GetServiceOrThrow<UserWallClient>();
+
+        await client.DeleteUserAsync(SelectedItem.Id);
+
+        Items.Remove(SelectedItem);
     }
 
     private async Task Load()
     {
-        var client = new UserWallClient("http://localhost:5159", new HttpClient());
-        var users = (await client.GetUsersAsync())
-            .ToList();
+        var client = Locator.Current.GetServiceOrThrow<UserWallClient>();
 
-        Dispatcher.UIThread.Post(() =>
+        var users = (await client.GetUsersAsync()).ToList();
+
+        RxApp.MainThreadScheduler.Schedule(() =>
         {
             foreach (var user in users)
                 Items.Add(user);

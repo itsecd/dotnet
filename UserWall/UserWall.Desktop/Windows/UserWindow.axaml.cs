@@ -1,10 +1,8 @@
-using Avalonia.ReactiveUI;
-
 using UserWall.Desktop.ViewModels;
 
-namespace UserWall.Desktop.Views;
+namespace UserWall.Desktop.Windows;
 
-public partial class UserWindow : ReactiveWindow<UserViewModel>
+public partial class UserWindow : BaseWindow<UserViewModel>
 {
     public UserWindow()
     {

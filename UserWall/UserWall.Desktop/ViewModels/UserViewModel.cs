@@ -1,23 +1,21 @@
 using System.Collections.ObjectModel;
-using System.Globalization;
-using System.Linq;
-using System.Net.Http;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 
-using Avalonia.Threading;
-
 using ReactiveUI;
-using ReactiveUI.Fody.Helpers;
 
 namespace UserWall.Desktop.ViewModels;
 
-public sealed class UserViewModel : ReactiveObject
+public sealed class UserViewModel : BaseViewModel
 {
     public ObservableCollection<UserDto> Items { get; } = new();
 
-    public string Id { get; } = string.Empty;
+    public int Id { get; }
+
+    public string FirstName { get; set; } = string.Empty;
+
+    public string LastName { get; set; } = string.Empty;
 
     public ReactiveCommand<Unit, Unit> ApplyCommand { get; }
 
@@ -25,15 +23,25 @@ public sealed class UserViewModel : ReactiveObject
     {
         if (userDto is not null)
         {
-            Id = userDto.Id.ToString(CultureInfo.InvariantCulture);
+            Id = userDto.Id;
+            FirstName = userDto.FirstName;
+            LastName = userDto.LastName;
         }
 
         ApplyCommand = ReactiveCommand.CreateFromTask(Apply);
     }
 
-    private Task Apply()
+    private async Task Apply()
     {
-        // TODO
-        return Task.CompletedTask;
+        var userDto = new UserDto
+        {
+            Id = Id,
+            FirstName = FirstName,
+            LastName = LastName
+        };
+
+        // TODO: Validation
+
+        await CloseWindowInteraction.Handle(userDto);
     }
 }

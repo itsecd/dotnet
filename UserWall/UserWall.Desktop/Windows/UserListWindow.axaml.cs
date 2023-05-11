@@ -7,9 +7,9 @@ using ReactiveUI;
 
 using UserWall.Desktop.ViewModels;
 
-namespace UserWall.Desktop.Views;
+namespace UserWall.Desktop.Windows;
 
-public partial class UserListWindow : ReactiveWindow<UserListViewModel>
+public partial class UserListWindow : BaseWindow<UserListViewModel>
 {
     public UserListWindow()
     {
@@ -27,7 +27,7 @@ public partial class UserListWindow : ReactiveWindow<UserListViewModel>
     public async Task Item(InteractionContext<UserDto?, UserDto?> ctx)
     {
         var view = new UserWindow { ViewModel = new UserViewModel(ctx.Input) };
-        await view.ShowDialog(this);
-        ctx.SetOutput(null);
+        var userDto = await view.ShowDialog<UserDto?>(this);
+        ctx.SetOutput(userDto);
     }
 }
