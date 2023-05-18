@@ -4,5 +4,10 @@
     <Application.Styles>
         <FluentTheme Mode="Light"/>
         <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
+
+        <Style Selector="Button.default">
+            <Setter Property="MinWidth" Value="100"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
     </Application.Styles>
 </Application>

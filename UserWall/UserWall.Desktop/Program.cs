@@ -16,6 +16,7 @@ internal class Program
 
         Locator.CurrentMutable.RegisterConstant(configuration);
         Locator.CurrentMutable.RegisterConstant(client);
+        Locator.CurrentMutable.RegisterConstant<IAssetLoader>(new AssetLoader());
 
         BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
     }

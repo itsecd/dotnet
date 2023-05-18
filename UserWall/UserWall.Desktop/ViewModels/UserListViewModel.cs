@@ -1,3 +1,4 @@
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reactive;
@@ -89,14 +90,22 @@ public sealed class UserListViewModel : BaseViewModel
 
     private async Task Load()
     {
-        var client = Locator.Current.GetServiceOrThrow<UserWallClient>();
-
-        var users = (await client.GetUsersAsync()).ToList();
-
-        RxApp.MainThreadScheduler.Schedule(() =>
+        try
         {
-            foreach (var user in users)
-                Items.Add(user);
-        });
+            var client = Locator.Current.GetServiceOrThrow<UserWallClient>();
+
+            var users = (await client.GetUsersAsync()).ToList();
+
+            RxApp.MainThreadScheduler.Schedule(() =>
+            {
+                foreach (var user in users)
+                    Items.Add(user);
+            });
+        }
+        catch (Exception e)
+        {
+            var messageViewModel = new MessageViewModel(MessagePictogram.Error, e.Message);
+            ShowMessage(messageViewModel);
+        }
     }
 }

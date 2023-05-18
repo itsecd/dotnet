@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:conv="using:UserWall.Desktop.Converters"
+        x:Class="UserWall.Desktop.Windows.MessageWindow"
+        WindowStartupLocation="CenterOwner"
+        Width="500" Height="200"
+        CanResize="False"
+        Icon="/Assets/App.png"
+        Title="{Binding Title}">
+    <Window.Resources>
+        <conv:MessagePictogramToBitmapConverter x:Key="messagePictogramToBitmapConverter"/>
+    </Window.Resources>
+    <DockPanel Margin="10">
+        <Button DockPanel.Dock="Bottom"
+                Classes="default"
+                Command="{Binding OkCommand}"
+                Content="ОК"
+                HorizontalAlignment="Right"/>
+
+        <Image Source="{Binding Pictogram, Converter={StaticResource messagePictogramToBitmapConverter}}"
+               Width="64" Height="64"/>
+
+        <TextBlock Text="{Binding Message}"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Center"
+                   Margin="20,0,0,0"/>
+    </DockPanel>
+</Window>
